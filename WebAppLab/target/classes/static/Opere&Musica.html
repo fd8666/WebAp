@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<link rel="icon" type="image/png" href="img/db_fulmine.png">
+<head>
+    <meta charset="UTF-8">
+    <title>Opere&Musica-David Bowie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/addSong.js" defer></script>
+    <script src="js/deleteSong.js" defer></script>
+</head>
+
+<body>
+<header class="p-3 mb-6 text-white">
+    <div class="Titolo">
+        <h1 class="header-title"><i class="fas fa-music"></i> Opere <span class="lightning-icon"></span> Musica <i class="fas fa-record-vinyl"></i></h1>
+        <p class="sottotitolo">Le canzoni, gli album e i capolavori di un'icona senza tempo</p>
+        <nav class="text-center text-white-50">
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link btn btn-primary mx-2" href="home.html"><i class="fas fa-home"></i> Home - Storia</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary mx-2" href="Opere&Musica.html"><i class="fas fa-music"></i> Opere & Musica</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary mx-2" href="iscriviti.html"><i class="fas fa-user-plus"></i> Iscriviti</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <div class="text-end mt-5 mb-1">
+        <button id="addSongButton" class="btn btn-outline-primary btn-sm"><i class="fas fa-plus"></i> Aggiungi un Singolo</button>
+        <button id="removeSongButton" class="btn btn-outline-danger btn-sm"><i class="fas fa-minus"></i> Rimuovi Singolo</button>
+    </div>
+
+    <section class="mt-2 mb-1">
+        <table class="table table-striped table-bordered" id="songTable">
+            <thead class="table-dark">
+            <tr>
+                <th>Album</th>
+                <th>Titolo</th>
+                <th>Anno</th>
+                <th>Azioni</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Heroes</td>
+                <td>Heroes</td>
+                <td><span class="badge bg-primary">1977</span></td>
+                <td><button class="btn btn-danger btn-sm deleteButton"><i class="fa-solid fa-trash"></i></button></td>
+            </tr>
+            <tr>
+                <td>The Rise and Fall of Ziggy Stardust...</td>
+                <td>StarMan</td>
+                <td><span class="badge bg-primary">1972</span></td>
+                <td><button class="btn btn-danger btn-sm deleteButton"><i class="fa-solid fa-trash"></i></button></td>
+            </tr>
+            <tr>
+                <td>Greatest Hits III</td>
+                <td>Under Pressure</td>
+                <td><span class="badge bg-primary">1981</span></td>
+                <td><button class="btn btn-danger btn-sm deleteButton"><i class="fa-solid fa-trash"></i></button></td>
+            </tr>
+            <tr>
+                <td>Space Oddity</td>
+                <td>Space Oddity</td>
+                <td><span class="badge bg-primary">1969</span></td>
+                <td><button class="btn btn-danger btn-sm deleteButton"><i class="fa-solid fa-trash"></i></button></td>
+            </tr>
+            <tr>
+                <td>Hunky Dory</td>
+                <td>Life On Mars?</td>
+                <td><span class="badge bg-primary">1971</span></td>
+                <td><button class="btn btn-danger btn-sm deleteButton"><i class="fa-solid fa-trash"></i></button></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div id="songForm" style="display: none; margin-top: 20px;">
+        <h3>Aggiungi un nuovo Singolo</h3>
+        <form id="addSongForm">
+            <div class="mb-3">
+                <label for="album" class="form-label">Album</label>
+                <input type="text" id="album" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Titolo</label>
+                <input type="text" id="title" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="year" class="form-label">Anno</label>
+                <input type="number" id="year" class="form-control" required>
+            </div>
+            <button id="addSong" class="btn btn-outline-primary btn-sm"><i class="fas fa-plus"></i> Aggiungi</button>
+        </form>
+    </div>
+
+    <div id="removeSongForm" style="display: none; margin-top: 10px;">
+        <h3>Rimuovi un Singolo</h3>
+        <form id="removeSongByNumber" onsubmit="removeSongNumber(event)">
+            <label for="songNumber">Numero del Singolo:</label>
+            <input type="number" id="songNumber" min="1" required>
+            <button id="removeSong" class="btn btn-outline-danger btn-sm"><i class="fas fa-minus"></i> Rimuovi</button>
+        </form>
+    </div>
+</main>
+
+<script src="script.js"></script>
+
+<footer class="bg-dark text-white text-center p-3 mt-4">
+    <div class="container">
+        <blockquote class="blockquote mt-3" style="font-style: italic; color: #1E90FF;">
+            <p>"We can be heroes, just for one day."</p>
+            <footer class="blockquote-footer text-white"><cite title="Source Title">David Bowie</cite></footer>
+        </blockquote>
+        <p>&copy; 2024 David Bowie Tribute. Tutti i diritti riservati.</p>
+        <div class="social-icons">
+            <span class="text-white mx-2"><i class="fab fa-facebook-f"></i></span>
+            <span class="text-white mx-2"><i class="fab fa-twitter"></i></span>
+            <span class="text-white mx-2"><i class="fab fa-instagram"></i></span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

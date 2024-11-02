@@ -1,0 +1,81 @@
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #240046, #540d6e, #9d02d7, #ff0054);
+}
+
+.header-title {
+    text-align: center;
+    font-size: 70px;
+    color: #1E90FF;
+    margin: 0;
+}
+
+.sottotitolo {
+    text-align: center;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 20px;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #072866;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.lightning-icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-image: url("/static/img/db_fulmine.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.nav-link {
+    background-color: #FF1E00;
+    color: white;
+    font-size: large;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+    color: #333333;
+    font-size: large;
+    background-color: #1E90FF;
+    transform: scale(1.05);
+}
+
+.social-icons {
+    font-size: 25px;
+}
+
+.table {
+    border: 5px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    font-size: 30px;
+}
+
+th {
+    font-size: 30px;
+}
+
+#addSongButton,
+#removeSongButton,
+#sendButton,
+#clearButton {
+    font-size: 1.2rem;
+    padding: 14px 28px;
+}
+
+#songForm {
+    display: none;
+}
