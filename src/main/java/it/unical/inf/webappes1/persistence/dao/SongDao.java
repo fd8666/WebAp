@@ -5,7 +5,7 @@ import it.unical.inf.webappes1.model.Song;
 import java.util.List;
 
 public interface SongDao {
-    List<Song> findAll(); // Recupera tutte le canzoni
+    List<Song> findAll();
     Song findByPrimaryKey(String title);
 
     void save(Song song); // Salva una nuova canzone
